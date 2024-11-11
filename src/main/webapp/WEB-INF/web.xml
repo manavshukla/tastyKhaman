@@ -4,28 +4,33 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-
-    <!-- Context Loader Listener -->
-    <listener>
+    <!-- Context Loader Listener for Spring Application Context -->
+    <!--<listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+    </listener>-->
+
+    <!-- Root Application Context Configuration -->
+    <!--<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>-->
 
     <!-- Dispatcher Servlet Configuration -->
-    <servlet>
+    <!--<servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value></param-value> <!-- Leave empty to use the default: /WEB-INF/dispatcher-servlet.xml -->
+            <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- Servlet Mapping -->
+    &lt;!&ndash; Servlet Mapping for Dispatcher Servlet &ndash;&gt;
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <!-- Encoding Filter (Optional) -->
     <filter>
