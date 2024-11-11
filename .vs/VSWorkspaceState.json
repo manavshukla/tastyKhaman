@@ -1,0 +1,19 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\aone",
+    "\\src\\main\\java\\com\\aone\\module\\login",
+    "\\src\\main\\java\\com\\aone\\module\\login\\controller",
+    "\\src\\main\\webapp",
+    "\\src\\main\\webapp\\resources",
+    "\\src\\main\\webapp\\resources\\testy-login",
+    "\\src\\main\\webapp\\WEB-INF",
+    "\\src\\main\\webapp\\WEB-INF\\views",
+    "\\src\\main\\webapp\\WEB-INF\\views\\commons"
+  ],
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ItemReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="a1504125-08fe-4e91-9391-cdb52c8181e8">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="ItemDataset" uuid="4c3541a8-78e8-43fc-8da0-bf6366013ad8">
+		<queryString>
+			<![CDATA[SELECT
+     `id` AS item_master_id,
+     `hsn_code` AS item_master_hsn_code,
+     `name` AS item_master_name
+FROM
+     `item_master`]]>
+		</queryString>
+		<field name="item_master_id" class="java.lang.Long"/>
+		<field name="item_master_hsn_code" class="java.lang.String"/>
+		<field name="item_master_name" class="java.lang.String"/>
+		<variable name="totalCredit" class="java.lang.Double" calculation="Sum"/>
+	</subDataset>
+	<parameter name="startDate" class="java.lang.String"/>
+	<parameter name="endDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT DATE_FORMAT(s.order_date,'%d/%m/%Y') as order_date,DATE_FORMAT(s.booking_date,'%d/%m/%Y') as booking_Date, concat(IFNULL(cm.fname,''), '', IFNULL(cm.lname,'')) as name, cm.mobile,
+concat(IFNULL(ad.street, ''), ' ', IF(ad.zipCode > 0, ad.zipCode, '')) as addressData,
+sum(if(pm.cr_dr_flag=1,pm.amount, 0)) as totalCredit,
+sum(if(pm.cr_dr_flag=2,pm.amount, 0)) as totalDebit,
+(sum(if(pm.cr_dr_flag=2,pm.amount, 0)) - sum(if(pm.cr_dr_flag=1,pm.amount, 0))) as pendingBalance
+FROM sales s
+INNER JOIN contact_master cm ON cm.id = s.contact_id  and cm.deleted = 0
+INNER JOIN payment_master as pm on pm.contactId = cm.id and s.id = pm.billNo and pm.deleted = 0
+LEFT JOIN (select * from address where id in (select max(id) from address group by  foreignKey)) AS ad ON s.contact_id=ad.foreignKey AND ad.moduleName='CONTACT_BILLING_ADDRESS'
+WHERE s.deleted = 0 and s.orderType = 1
+GROUP BY s.id, cm.fname, cm.lname, cm.mobile, ad.street, ad.zipCode
+HAVING (sum(if(pm.cr_dr_flag=2,pm.amount, 0)) - sum(if(pm.cr_dr_flag=1,pm.amount, 0))) > 0
+ORDER BY s.order_date desc]]>
+	</queryString>
+	<field name="order_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="booking_Date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="addressData" class="java.lang.String"/>
+	<field name="totalCredit" class="java.lang.Double"/>
+	<field name="totalDebit" class="java.lang.Double"/>
+	<field name="pendingBalance" class="java.lang.Double"/>
+	<variable name="pendingPaymentTotal" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{pendingBalance}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="70" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-12" y="-27" width="599" height="86" forecolor="#FFFFFF" backcolor="#006699" uuid="58a56b34-dfdc-4c18-970c-c53f1dfa3ce4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="163" y="-11" width="240" height="26" forecolor="#FFFFFF" uuid="2ab0ea9a-5274-414b-84ee-16d95645c4ca"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Pending Payment Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="33" width="57" height="16" forecolor="#FFFFFF" uuid="24e0a525-822e-4150-a217-db606fece036">
+					<printWhenExpression><![CDATA[$P{startDate} != null]]></printWhenExpression>
+				</reportElement>
+				<text><![CDATA[Start Date :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="66" y="33" width="142" height="16" forecolor="#FFFFFF" uuid="3e18a2ba-43ce-4133-b4d6-d4841a9e34d9"/>
+				<textFieldExpression><![CDATA[$P{startDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="349" y="33" width="57" height="16" forecolor="#FFFFFF" uuid="b20d482e-5a85-4cda-9af4-8aa8769c0d07">
+					<printWhenExpression><![CDATA[$P{endDate} != null]]></printWhenExpression>
+				</reportElement>
+				<text><![CDATA[End Date :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="406" y="33" width="166" height="16" forecolor="#FFFFFF" uuid="51d1b37a-ee73-4378-b412-8eede94eaacb"/>
+				<textFieldExpression><![CDATA[$P{endDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="575" height="36" backcolor="#CCCCCC" uuid="0a560847-2c5a-4a8d-9eed-2817cfb762e3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="158" y="0" width="119" height="35" uuid="f9bed753-7f80-4717-9927-4d7970b22c41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="93" height="35" uuid="f44db533-336c-40c4-90bc-6e06ea41b969"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="481" y="0" width="1" height="36" uuid="9fc1bef0-d5c6-4021-8288-d39a59ba1761"/>
+			</line>
+			<staticText>
+				<reportElement x="375" y="0" width="106" height="36" uuid="e002524d-a762-42a2-93d8-4254674621dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<line>
+				<reportElement x="278" y="0" width="1" height="36" uuid="5b9fec81-b700-46e8-98e2-771f8003ed2a"/>
+			</line>
+			<line>
+				<reportElement x="373" y="0" width="1" height="36" uuid="a1896de3-f35e-40e8-9de9-3a8c4ff7c344"/>
+			</line>
+			<staticText>
+				<reportElement x="484" y="0" width="88" height="35" uuid="2aad64d1-986b-40de-a0f7-b7504ec8bfde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pending Payment]]></text>
+			</staticText>
+			<line>
+				<reportElement x="77" y="0" width="1" height="36" uuid="32581147-49e7-4a60-ba3f-0d833d98726d"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="0" width="73" height="35" uuid="57c01bd2-a5af-4f0d-b4f5-238d829314a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="157" y="0" width="1" height="36" uuid="8cc50935-75e8-4581-9d38-c2580b3b0a2a"/>
+			</line>
+			<staticText>
+				<reportElement x="80" y="0" width="77" height="35" uuid="60f2c486-dd96-471c-841f-186faa1bb714"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Booking Date]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Prevent">
+			<line>
+				<reportElement x="574" y="-1" width="1" height="35" uuid="087ab469-17ec-4818-9389-b02f21906015"/>
+			</line>
+			<line>
+				<reportElement x="0" y="35" width="574" height="1" uuid="241f5b5e-fbbf-45f6-9d83-6834f4104545"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="158" y="2" width="119" height="34" uuid="b7d81273-f196-4313-945f-5c1762e95e45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="481" y="0" width="1" height="35" uuid="e0753ed5-4cf7-42d1-b4e9-e922f63ddc95"/>
+			</line>
+			<line>
+				<reportElement x="277" y="0" width="1" height="35" uuid="fe119076-234a-4112-af5d-4ce14fc1e636"/>
+			</line>
+			<line>
+				<reportElement x="373" y="0" width="1" height="35" uuid="cf35c8f1-3565-4b48-a601-d27d7d5e3c71"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="1" width="1" height="35" uuid="f1868dd7-3641-4549-9e77-721b18e98465"/>
+			</line>
+			<line>
+				<reportElement x="77" y="1" width="1" height="35" uuid="0dd98025-bfe1-4adb-912c-03e261919369"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="-1" y="-1" width="78" height="36" uuid="d609d5fb-4005-457a-bbec-fbf915b366c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{order_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="2" width="93" height="33" uuid="282b7021-668e-4f7a-9c98-14c8835d43ca"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mobile}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="484" y="1" width="89" height="34" uuid="84c3cd01-1932-48ce-a901-ed2751884338"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pendingBalance}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="157" y="0" width="1" height="35" uuid="f9f94f9f-daee-46fc-aecd-f063e0b8b9bf"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="79" y="2" width="78" height="33" uuid="997f2415-e736-45b6-99ca-49d96ec9d4ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{booking_Date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="376" y="2" width="106" height="34" uuid="a72ef406-d758-4d26-ac7b-82947b5d574a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{addressData}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="1" width="85" height="17" uuid="6d2848ef-8ac6-447f-81c1-80fe587fdb80"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="18" width="575" height="1" uuid="db479836-6722-4868-8d7b-e5e729d587ae"/>
+			</line>
+			<line>
+				<reportElement x="481" y="-5" width="1" height="24" uuid="16e9e9f8-a1e3-4167-b331-f74ceae080c1"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-5" width="1" height="24" uuid="e3ad62a7-a450-40b2-b9fa-5b8a3f575d6e"/>
+			</line>
+			<line>
+				<reportElement x="574" y="-4" width="1" height="24" uuid="62f9c73c-d544-41b9-99a3-b393dd247b82"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="482" y="0" width="91" height="17" uuid="37094448-d40c-49d4-80f9-01acbdac4049"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{pendingPaymentTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-12" y="0" width="598" height="54" backcolor="#006699" uuid="15ee537c-8eb4-405d-9932-80e1bd47e6d3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="432" y="25" width="80" height="20" forecolor="#FFFFFF" uuid="c1258041-4090-4204-9356-e6ae1a875375"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="25" width="40" height="20" forecolor="#FFFFFF" uuid="f493b736-31e2-48a2-9508-19495671b2bc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,28 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++           JAVA CODING STANDARD                                  +++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+----------------------------------------------------------------------------
+table name with underscore and small font. eg: table_name
+@Entity
+@Table(name = "bill_of_material_detail")
+public class BillOfMaterialDetail extends AbstractBaseMasterEntity<Long> {
+----------------------------------------------------------------------------
+variable name in pojo with camel case. eg: itemId
+@Column(name = AddressDbColPojoConstant.CITY_ID)
+private long cityId;
+----------------------------------------------------------------------------
+constant -> value with underscore with small font eg: item_id
+public static final String CITY_ID = "city_id";
+----------------------------------------------------------------------------
+url in controller : eg : billOfMaterialDetail
+----------------------------------------------------------------------------
+packageName : eg: billOfMaterialDetail
+----------------------------------------------------------------------------
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++           ANGULAR CODING STANDARD                               +++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

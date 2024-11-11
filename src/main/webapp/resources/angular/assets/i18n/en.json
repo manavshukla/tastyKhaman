@@ -1,0 +1,108 @@
+{
+    "TITLE" : "This is title English",
+    
+    "CATEGORY_LABLE_NAME" : "Name",
+    "CATEGORY_LABLE_DESCRIPTION" : "Description",
+    "CATEGORY_REQUIRE_NAME" : "Name is required",
+    "CATEGORY_REQUIRE_DESCRIPTION" : "Description is required",
+
+    "ITEMSIZE_LABLE_NAME" : "Name",
+    "ITEMSIZE_LABLE_DESCRIPTION" : "Description",
+    "ITEMSIZE_REQUIRE_NAME" : "Name is required",
+    "ITEMSIZE_REQUIRE_DESCRIPTION" : "Description is required",
+
+    "CONTACTCATEGORY_LABLE_NAME" : "Name",
+    "CONTACTCATEGORY_LABLE_DESCRIPTION" : "Description",
+    "CONTACTCATEGORY_REQUIRE_NAME" : "Name is required",
+    "CONTACTCATEGORY_REQUIRE_DESCRIPTION" : "Description is required",
+
+    "COMPANY_LABLE_NAME" : "Name",
+    "COMPANY_LABLE_DESCRIPTION" : "Description",
+    "COMPANY_REQUIRE_NAME" : "Name is required",
+    "COMPANY_REQUIRE_DESCRIPTION" : "Description is required",
+
+
+    "ITEMS_LABLE_NAME" : "Item Name",
+    "ITEMS_LABLE_CATEGORY" : "Category",
+    "ITEMS_LABLE_PRICE" : "Price",
+    "ITEMS_LABLE_MINQTY" : "Minimum Quantity",
+    "ITEMS_LABLE_THALWEIGHT" : "Thal Weight",
+    "ITEMS_LABLE_DESCRIPTION" : "Description",
+    "ITEMS_REQUIRE_NAME" : "Name is required",
+    "ITEMS_REQUIRE_PRICE" : "Price is required",
+    "ITEMS_REQUIRE_MINQTY" : "Minimum Quantity is required",
+    "ITEMS_REQUIRE_THALWEIGHT" : "Thalweight is required",
+    "ITEMS_REQUIRE_DESCRIPTION" : "Description is required",
+
+
+    "ITEMCATEGORY_LABLE_NAME" : "Name",
+    "ITEMCATEGORY_LABLE_DESCRIPTION" : "Description",
+    "ITEMCATEGORY_REQUIRE_NAME" : "Name is required",
+    "ITEMCATEGORY_REQUIRE_DESCRIPTION" : "Description is required",
+    
+    "USER_LABLE_NAME" : "Name",
+    "USER_LABLE_USERNAME" : "User Name",
+    "USER_LABLE_EMAIL" : "Email",
+    "USER_LABLE_PASSWORD" : "Password",
+    "USER_LABLE_SUPERADMIN" : "Type",
+    "USER_REQUIRE_NAME" : "Name is required",
+    "USER_REQUIRE_USERNAME" : "Username is required",
+    "USER_REQUIRE_PASSWORD" : "Password is required",
+    "USER_VALID_EMAIL" : "Email must be a valid email address",
+    "USER_REQUIRE_EMAIL" : "Email is required.",
+    "USER_MINLENGTH_PASSWORD" : "Password must be at least 6 characters",
+
+    "CONTACTMASTER_LABLE_FIRSTNAME" : "First Name",
+    "CONTACTMASTER_LABLE_LASTNAME" : "Last Name",
+    "CONTACTMASTER_LABLE_CATEGORY" : "Contact Category",
+    "CONTACTMASTER_LABLE_PHONE" : "Phone Number",
+    "CONTACTMASTER_LABLE_MOBILE" : "Mobile Number",
+    "CONTACTMASTER_LABLE_CONTACT" : "Contact Type",
+    "CONTACTMASTER_LABLE_DESCRIPTION" : "Description",
+    "CONTACTMASTER_LABLE_VEHICLENUMBER" : "Vehicle Number",
+    "CONTACTMASTER_LABLE_STREET" : "Street",
+    "CONTACTMASTER_LABLE_COUNTRY" : "Country",
+    "CONTACTMASTER_LABLE_STATE" : "State",
+    "CONTACTMASTER_LABLE_CITY" : "City",
+    "CONTACTMASTER_LABLE_ZIPCODE" : "Zip Code",
+    "CONTACTMASTER_LABLE_EMAIL":"Email",
+
+
+    "CONTACTMASTER_REQUIRE_FIRSTNAME" : "First Name is required",
+    "CONTACTMASTER_REQUIRE_LASTNAME" : "Last Name is required",
+    "CONTACTMASTER_REQUIRE_CATEGORY" : " Contact Category is required",
+    "CONTACTMASTER_REQUIRE_PHONE" : " Phone Number is required",
+    "CONTACTMASTER_REQUIRE_MOBILE" : "Mobile Number is required",
+    "CONTACTMASTER_REQUIRE_CONTACT" : "Contact Type is required",
+    "CONTACTMASTER_REQUIRE_DESCRIPTION" : "Description is required",
+    "CONTACTMASTER_REQUIRE_VEHICLENUMBER" : "Vehicle Number is required",
+    "CONTACTMASTER_REQUIRE_STREET" : "Street is required",
+    "CONTACTMASTER_REQUIRE_ZIPCODE" : "Zip Code is required",
+    "CONTACTMASTER_REQUIRE_EMAIL":"Email is required",
+
+    "CITY_LABLE_NAME" : "City Name",
+    "CITY_LABLE_STATE" : "State",
+    "CITY_LABLE_DESCRIPTION" : "Description",
+    "CITY_REQUIRE_NAME" : "Name is required",
+    "CITY_REQUIRE_state" : "state Name is required",
+    "CITY_REQUIRE_DESCRIPTION" : "Description is required",
+
+    "STATE_LABLE_NAME" : "State Name",
+    "STATE_LABLE_CODE" : "State Code",
+    "STATE_LABLE_COUNTRY" : "Country Name",
+    "STATE_REQUIRE_NAME" : "State Name is required",
+    "STATE_REQUIRE_CODE" : "Code is required",
+
+    "COUNTRY_LABLE_NAME" : "Country Name",
+    "COUNTRY_REQUIRE_NAME" : "Country Name is required",
+    "COUNTRY_REQUIRE_SORT_NAME":"Country Sort Name  is required",
+    "COUNTRY_LABLE_SORT_NAME":"Sort Name",
+    "COUNTRY_LABLE_PHONE_CODE":"Country Code",
+    "COUNTRY_REQUIRE_PHONE_CODE":"Country Phone Code  is required",
+
+
+    "BUTTON_LABEL_SAVE" : "Save",
+    "BUTTON_LABEL_EDIT" : "Edit",
+    "BUTTON_LABEL_UPDATE" : "Update",
+    "BUTTON_LABEL_CANCEL" : "Cancel"
+}

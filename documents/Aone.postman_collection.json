@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "379ae37a-d190-4bc5-a233-0da920ad5d2a",
+		"name": "TestyKhaman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "contact category Copy",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n\t    \"name\": \"b129\",\n\t    \"parentCategoryId\":0,\n        \"description\": null\n  },\n  \"requestToken\":\"1242354\",\n  \"authToken\":\"1\"\n} "
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/save",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"save"
+							]
+						},
+						"description": "category save"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"name\":\"b\",\n    \"id\":1,\n    \"parentCategoryId\":0,\n    \"description\":\"hello 1234\"\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/update",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"update"
+							]
+						},
+						"description": "category update"
+					},
+					"response": []
+				},
+				{
+					"name": "saveOrUpdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"name\":\"third\"\n  },\n  \"paginationData\":{\n    \"rowsPerPage\":10\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/saveOrUpdate",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"saveOrUpdate"
+							]
+						},
+						"description": "category saveOrUpdate"
+					},
+					"response": []
+				},
+				{
+					"name": "saveOrUpdateAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataList\":\n  [\n  \t{\n    \"name\":\"ten\"\n  \t},\n  \t{\n    \"name\":\"four\",\n    \"id\":4\n  \t}\n  ],\n  \"paginationData\":{\n    \"rowsPerPage\":10\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/saveOrUpdateAll",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"saveOrUpdateAll"
+							]
+						},
+						"description": "category save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"id\":1\n  },\n   \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/delete",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":1,\n  \"paginationData\":{\n    \"rowsPerPage\":10\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/getById",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActiveData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"orderingData\": {\n      \"column\": \"id\",\n      \"descending\": false\n    },\n    \"paginationData\": {\n      \"pageNumber\": 2,\n      \"rowsPerPage\":2\n     }\n  },\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/getActiveData",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"getActiveData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"orderingData\": {\n      \"column\": \"id\",\n      \"descending\": false\n    },\n    \"paginationData\": {\n      \"pageNumber\": 1,\n      \"rowsPerPage\":4\n     }\n  },\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/contactCategory/getAll",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"contactCategory",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "itemCategory",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n\t    \"name\": \"b129\",\n        \"description\": null\n  },\n  \"requestToken\":\"1242354\",\n  \"authToken\":\"1\"\n} "
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/save",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"save"
+							]
+						},
+						"description": "category save"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"name\":\"b111\",\n    \"id\":1,\n    \"description\":\"hello 1234\"\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/update",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"update"
+							]
+						},
+						"description": "category update"
+					},
+					"response": []
+				},
+				{
+					"name": "saveOrUpdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"name\":\"third\"\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/saveOrUpdate",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"saveOrUpdate"
+							]
+						},
+						"description": "category saveOrUpdate"
+					},
+					"response": []
+				},
+				{
+					"name": "saveOrUpdateAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataList\":\n  [\n  \t{\n    \"name\":\"ten\"\n  \t},\n  \t{\n    \"name\":\"four\",\n    \"id\":4\n  \t}\n  ],\n  \"paginationData\":{\n    \"rowsPerPage\":10\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/saveOrUpdateAll",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"saveOrUpdateAll"
+							]
+						},
+						"description": "category save"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\":{\n    \"id\":1\n  },\n   \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/delete",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":1,\n  \"paginationData\":{\n    \"rowsPerPage\":10\n  },\n  \"requestToken\":\"1234sdse\",\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/getById",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActiveData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"orderingData\": {\n      \"column\": \"id\",\n      \"descending\": false\n    },\n    \"paginationData\": {\n      \"pageNumber\": 2,\n      \"rowsPerPage\":2\n     }\n  },\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/getActiveData",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"getActiveData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"orderingData\": {\n      \"column\": \"id\",\n      \"descending\": false\n    },\n    \"paginationData\": {\n      \"pageNumber\": 1,\n      \"rowsPerPage\":4\n     }\n  },\n  \"authToken\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://bnbsalons.com/spring-mvc-tutorial/rest/itemCategory/getAll",
+							"protocol": "http",
+							"host": [
+								"bnbsalons",
+								"com"
+							],
+							"path": [
+								"spring-mvc-tutorial",
+								"rest",
+								"itemCategory",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

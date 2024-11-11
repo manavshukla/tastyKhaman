@@ -1,0 +1,99 @@
+{
+    "TITLE" : "This is title English",
+    
+    "CATEGORY_LABLE_NAME" : "नाम",
+    "CATEGORY_LABLE_DESCRIPTION" : "विवरण",
+    "CATEGORY_REQUIRE_NAME" : "नाम आवश्यक है.",
+    "CATEGORY_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+
+    "ITEMSIZE_LABLE_NAME" : "नाम",
+    "ITEMSIZE_LABLE_DESCRIPTION" : "विवरण",
+    "ITEMSIZE_REQUIRE_NAME" : "नाम आवश्यक है.",
+    "ITEMSIZE_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+
+  
+    "COMPANY_LABLE_NAME" : "नाम",
+    "COMPANY_LABLE_DESCRIPTION" : "विवरण",
+    "COMPANY_REQUIRE_NAME" : "नाम आवश्यक है.",
+    "COMPANY_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+  
+    "CONTACTCATEGORY_LABLE_NAME" : "नाम",
+    "CONTACTCATEGORY_LABLE_DESCRIPTION" : "विवरण",
+    "CONTACTCATEGORY_REQUIRE_NAME" : "नाम आवश्यक है.",
+    "CONTACTCATEGORY_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+    
+    "CONTACTMASTER_LABLE_FIRSTNAME" : "नाम",
+    "CONTACTMASTER_LABLE_LASTNAME" : "अटक",
+    "CONTACTMASTER_LABLE_CATEGORY" : "वर्ग",
+    "CONTACTMASTER_LABLE_PHONE" : "फ़ोन",
+    "CONTACTMASTER_LABLE_MOBILE" : "मोबाइल",
+    "CONTACTMASTER_LABLE_CONTACT" : "संपर्क करें",
+    "CONTACTMASTER_LABLE_DESCRIPTION" : "विवरण",
+    "CONTACTMASTER_LABLE_VEHICLENUMBER" : "वाहन संख्या",
+    "CONTACTMASTER_LABLE_STREET" : "सड़क",
+    "CONTACTMASTER_LABLE_COUNTRY" : "देश का नाम",
+    "CONTACTMASTER_LABLE_STATE" : "राज्य का नाम",
+    "CONTACTMASTER_LABLE_CITY" : "शहर का नाम",
+    "CONTACTMASTER_LABLE_ZIPCODE" : "पिन कोड",
+    "CONTACTMASTER_LABLE_EMAIL":"ईमेल",
+
+    "CONTACTMASTER_REQUIRE_FIRSTNAME" : "नाम आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_LASTNAME" : "अटक आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_CATEGORY" : "वर्ग आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_PHONE" : " फ़ोन आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_MOBILE" : "मोबाइल आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_CONTACT" : "संपर्क आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_VEHICLENUMBER" : "वाहन संख्या आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_STREET" : "सड़क आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_ZIPCODE" : "पिन कोड आवश्यक है.",
+    "CONTACTMASTER_REQUIRE_EMAIL":"ईमेल आवश्यक है.",
+
+
+    "CITY_LABLE_NAME" : "शहर का नाम",
+    "CITY_LABLE_STATE" : "राज्य का नाम",
+    "CITY_LABLE_DESCRIPTION" : "विवरण",
+    "CITY_REQUIRE_NAME" : "शहर का नाम आवश्यक है.",
+    "CITY_REQUIRE_STATE" : "राज्य का नामआवश्यक है.",
+    "CITY_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+    
+    "ITEMCATEGORY_LABLE_NAME" : "नाम",
+    "ITEMCATEGORY_LABLE_DESCRIPTION" : "विवरण",
+    "ITEMCATEGORY_REQUIRE_NAME" : "नाम आवश्यक है.",
+    "ITEMCATEGORY_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+
+    
+    "STATE_LABLE_NAME" : "राज्य का नाम",
+    "STATE_LABLE_CODE" : "राज्य संहिता",
+    "STATE_LABLE_COUNTRY" : "देश का नाम",
+    "STATE_LABLE_DESCRIPTION" : "विवरण",
+    "STATE_REQUIRE_NAME" : "राज्य का नाम आवश्यक है.",
+    "STATE_REQUIRE_CODE" : "राज्य संहिता आवश्यक है.",
+    "STATE_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+
+    "COUNTRY_LABLE_NAME" : "देश का नाम",
+    "COUNTRY_REQUIRE_NAME" : "देश का नाम आवश्यक है.",
+    "COUNTRY_REQUIRE_SORT_NAME":"देश का संक्षिप्त नाम आवश्यक है.",
+    "COUNTRY_LABLE_SORT_NAME":" संक्षिप्त नाम ",
+    "COUNTRY_LABLE_PHONE_CODE":"देश का फोन कोड",
+    "COUNTRY_REQUIRE_PHONE_CODE":"देश का फोन कोड आवश्यक है.",
+
+    "ITEMS_LABLE_NAME" : "वस्तु का नाम",
+    "ITEMS_LABLE_CATEGORY" : "आइटम श्रेणी",
+    "ITEMS_LABLE_PRICE" : "मूल्य",
+    "ITEMS_LABLE_MINQTY" : "न्यूनतम मात्रा",
+    "ITEMS_LABLE_THALWEIGHT" : "ट्रे वजन",
+    "ITEMS_LABLE_DESCRIPTION" : "विवरण",
+    "ITEMS_REQUIRE_NAME" : "वस्तु का नाम आवश्यक है.",
+    "ITEMS_REQUIRE_PRICE" : "मूल्य आवश्यक है.",
+    "ITEMS_REQUIRE_MINQTY" : "न्यूनतम मात्रा आवश्यक है.",
+    "ITEMS_REQUIRE_THALWEIGHT" : "ट्रे वजन आवश्यक है.",
+    "ITEMS_REQUIRE_DESCRIPTION" : "विवरण आवश्यक है.",
+
+
+    "BUTTON_LABEL_SAVE" : "बचाओ",
+    "BUTTON_LABEL_EDIT" : "संपादित करें",
+    "BUTTON_LABEL_UPDATE" : "अद्यतन करो",
+    "BUTTON_LABEL_CANCEL" : "रद्द करो",
+    "BUTTON_LABEL_DELETE" : "हटाओ"
+}

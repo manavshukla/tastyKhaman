@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1eb82570-6dff-46c9-ab3f-8938f886ec2b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="150"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="SalesDetails" uuid="878f754c-23b3-4709-9ea0-5ebfa1bead12">
+		<parameter name="subTotal" class="java.lang.Double"/>
+		<parameter name="discount" class="java.lang.Double"/>
+		<parameter name="grandTotal" class="java.lang.Double"/>
+		<parameter name="advance" class="java.lang.Double"/>
+		<field name="itemId" class="java.lang.Long"/>
+		<field name="orderQuantity" class="java.lang.Double"/>
+		<field name="price" class="java.lang.Double"/>
+		<field name="totalPrice" class="java.lang.Double"/>
+		<field name="item.name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="salesDetails" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="billNo" class="java.lang.Number"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="customerName" class="java.lang.String"/>
+	<parameter name="subTotal" class="java.lang.Double"/>
+	<parameter name="discount" class="java.lang.Double"/>
+	<parameter name="grandTotal" class="java.lang.Double"/>
+	<parameter name="time" class="java.lang.String"/>
+	<parameter name="gstNo" class="java.lang.String"/>
+	<parameter name="vehicleNo" class="java.lang.String"/>
+	<parameter name="vehicleRent" class="java.lang.Double"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="advance" class="java.lang.Double"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="158" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="595" height="155" uuid="5d87362f-569b-414f-9bf1-244ad8dee1e8"/>
+				<imageExpression><![CDATA[this.getClass().getResourceAsStream("/jasperreports/testylogo.jpg")]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="154" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="1" y="3" width="334" height="107" uuid="a77824fe-dace-4178-be79-6fe13dcb9301"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="335" y="3" width="258" height="107" uuid="23e2cb00-b6d4-4bfd-9983-3ebe1e5f9c50"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="355" y="7" width="49" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="dc702c67-a730-44d3-a785-474e7fce179b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill No. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="64" width="35" height="17" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="af2f3048-8d7e-4563-9c5e-56ebe0b1c39a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="335" y="28" width="258" height="1" uuid="4645d48a-751a-4927-a898-b0b4c4adcd00"/>
+			</line>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="10" width="100" height="20" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="cebab346-d2c4-46a5-9fa2-44649eb7d1f2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="408" y="7" width="175" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="ca7e7deb-78fb-4fae-af08-f395e0da1f51"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{billNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="408" y="64" width="175" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="6f4a5fcc-983d-4f0b-8686-3dd54fc389e2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="61" y="10" width="262" height="30" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="c5863222-f6bd-4390-94e1-b7ffdcdd4c36"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{customerName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="34" width="36" height="17" uuid="ca3b8b2b-646d-44aa-bfa2-6bfc8ec25ab8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="404" y="34" width="179" height="17" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="59195848-ede0-46de-9003-18badc120065"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="335" y="56" width="258" height="1" uuid="aa0bf2b0-59fe-458b-a537-70c9326f2f80"/>
+			</line>
+			<staticText>
+				<reportElement x="349" y="91" width="55" height="17" uuid="8c39257f-8d8a-4940-8f7c-1168a40a5cca"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST No. :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="408" y="91" width="175" height="17" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="6c574613-5a6e-4fb3-8d07-bc450c864ae9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gstNo}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="1" y="110" width="592" height="35" uuid="7c73f919-5af0-4fa1-ae65-1a5db8f54a0c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="9" y="120" width="68" height="17" uuid="68f06566-6192-4431-9bb9-6aa75c8262f8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehicle No:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="82" y="120" width="213" height="17" uuid="f55cd9e2-c7fa-4478-bfea-e2f2fc9939db"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vehicleNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="311" y="120" width="80" height="17" uuid="f2ab77cd-66b6-4a44-ae49-00ca187ec76f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehicle Rent:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="397" y="120" width="100" height="17" uuid="41314c97-0f94-46a3-88b2-e57072f3dac3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vehicleRent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="334" y="84" width="258" height="1" uuid="c025508c-d0f3-4d64-814a-0a05e4c8e5de"/>
+			</line>
+			<staticText>
+				<reportElement x="9" y="46" width="53" height="20" uuid="e4b57f3c-13d3-46ed-86a0-228dd755797d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="46" width="261" height="50" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="9581c397-ea27-4ccd-a3ac-c42b1c470198"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="226">
+			<componentElement>
+				<reportElement key="table" style="table" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="592" height="200" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="00e74ee8-5207-483f-924b-b552bdbaed0d"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="SalesDetails" uuid="9cf5d179-b758-4be9-b5fa-7646579ed639">
+						<datasetParameter name="subTotal">
+							<datasetParameterExpression><![CDATA[$P{subTotal}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="discount">
+							<datasetParameterExpression><![CDATA[$P{discount}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="grandTotal">
+							<datasetParameterExpression><![CDATA[$P{grandTotal}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="advance">
+							<datasetParameterExpression><![CDATA[$P{advance}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[$P{salesDetails}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="593" uuid="f6838a21-55c3-4982-a71c-190c752bc702">
+						<jr:tableFooter height="99" rowSpan="1">
+							<staticText>
+								<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="425" y="5" width="62" height="20" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="29c572aa-7fa6-4fed-bea2-6418925e50ec"/>
+								<textElement>
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Sub Total :]]></text>
+							</staticText>
+							<staticText>
+								<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="428" y="31" width="59" height="17" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="9090fd97-0ad3-40fa-b3f4-d1dc34e93307"/>
+								<textElement>
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Discount :]]></text>
+							</staticText>
+							<staticText>
+								<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="450" y="74" width="37" height="16" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="295edad7-b650-4a52-b224-59e55ea4c743"/>
+								<textElement>
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total :]]></text>
+							</staticText>
+							<staticText>
+								<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="432" y="52" width="55" height="16" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="295edad7-b650-4a52-b224-59e55ea4c743"/>
+								<textElement>
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Advance:]]></text>
+							</staticText>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="497" y="5" width="91" height="20" uuid="61e97bb4-bfa4-4eb4-80d8-99688303eb5d"/>
+								<textElement textAlignment="Right">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{subTotal}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="498" y="31" width="91" height="16" uuid="7b7011a1-582c-4721-818f-06098e12e938"/>
+								<textElement textAlignment="Right">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{discount}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="497" y="74" width="91" height="16" uuid="2a6c8410-c1af-4001-9903-0cb23b80da86"/>
+								<textElement textAlignment="Right">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{grandTotal}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="497" y="52" width="91" height="16" uuid="2a6c8410-c1af-4001-9903-0cb23b80da86"/>
+								<textElement textAlignment="Right">
+									<font size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{advance}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:column width="52" uuid="873b06a6-2265-4ef9-8a5a-06f2094593fd">
+							<jr:columnHeader style="table_CH" height="31" rowSpan="1">
+								<staticText>
+									<reportElement x="13" y="10" width="35" height="18" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="e8813f74-70c0-47e0-929a-6bdba2c0c3be"/>
+									<textElement>
+										<font size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[S.No.]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter style="table_CH" height="29" rowSpan="1"/>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField>
+									<reportElement x="8" y="6" width="39" height="20" uuid="348e8cad-55eb-4296-ba9e-4e0420dc0d42"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="267" uuid="374b7d1d-a666-4d85-b6fa-b3a6b73c52d5">
+							<jr:columnHeader style="table_CH" height="31" rowSpan="1">
+								<staticText>
+									<reportElement stretchType="RelativeToBandHeight" x="70" y="8" width="41" height="20" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="8104ab88-df93-4f81-af1b-cadda01e293b"/>
+									<textElement>
+										<font size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Details]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter style="table_CH" height="29" rowSpan="1"/>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField>
+									<reportElement x="8" y="6" width="220" height="20" uuid="10162906-e25f-4af2-b53e-2f72d645669a"/>
+									<textFieldExpression><![CDATA[$F{item.name}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="88" uuid="9df607b4-4dc7-440f-97ee-20c198e7d5ea">
+							<jr:columnHeader style="table_CH" height="31" rowSpan="1">
+								<staticText>
+									<reportElement stretchType="RelativeToBandHeight" x="22" y="8" width="39" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ce63b3a1-1327-499c-97c7-6e329e46879f"/>
+									<textElement>
+										<font size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Price]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter style="table_CH" height="29" rowSpan="1"/>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement x="33" y="6" width="49" height="20" uuid="77e429e0-210e-464b-a22a-02f1e83e8878"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="83" uuid="a52ee5e9-6b73-4a43-9a64-4e21457c25cc">
+							<jr:columnHeader style="table_CH" height="31" rowSpan="1">
+								<staticText>
+									<reportElement stretchType="RelativeToBandHeight" x="11" y="8" width="50" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c3c03834-8bc9-4d5e-adf0-d2d17a67e0df"/>
+									<textElement>
+										<font size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Qty]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter style="table_CH" height="29" rowSpan="1"/>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement x="37" y="6" width="40" height="20" uuid="647433f1-9a15-46e3-bbdf-651f1f4e0c8b"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{orderQuantity}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="103" uuid="a5e13c92-475c-4c0a-bf72-eb6e36654faa">
+							<jr:columnHeader style="table_CH" height="31" rowSpan="1">
+								<staticText>
+									<reportElement stretchType="RelativeToBandHeight" x="5" y="8" width="80" height="20" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="cd2802dd-b4aa-4138-904d-0c9e68834f34"/>
+									<textElement>
+										<font size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Total Amount]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter style="table_CH" height="29" rowSpan="1"/>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement x="20" y="6" width="77" height="20" uuid="d58836df-0612-4f70-a273-267add19b0c9"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[$F{totalPrice}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

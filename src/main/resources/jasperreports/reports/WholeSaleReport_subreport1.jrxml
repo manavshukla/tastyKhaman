@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WholeSaleReport_subreport1" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="55de66db-1b65-462b-966d-3329b93efbc6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="startDate" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[1970-01-01]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new Date().toString()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contactId" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[select sd.item_id, im.name, sd.total_price, sd.order_quantity from sales s inner JOIN sales_details sd on sd.sales_id = s.id and sd.deleted = 0 inner join item_master im on im.id = sd.item_id and im.deleted = 0 inner join contact_master cm on cm.id = s.contact_id and cm.deleted = 0 where s.deleted = 0  and s.orderType = 2  and s.order_date >= $P{startDate} and s.order_date <= $P{endDate} and s.contact_id = $P{contactId} order by sd.item_id]]>
+	</queryString>
+	<field name="item_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_price" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_quantity" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_price_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_price}]]></variableExpression>
+	</variable>
+	<variable name="total_price_2" class="java.lang.Double" resetType="Group" resetGroup="item_id" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_price}]]></variableExpression>
+	</variable>
+	<variable name="order_quantity_1" class="java.lang.Double" resetType="Group" resetGroup="item_id" calculation="Sum">
+		<variableExpression><![CDATA[$F{order_quantity}]]></variableExpression>
+	</variable>
+	<group name="item_id">
+		<groupExpression><![CDATA[$F{item_id}.toString()+$F{name}]]></groupExpression>
+		<groupHeader>
+			<band height="28">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="10" y="0" width="225" height="28" uuid="162d8f4e-974c-4e6d-8c5e-d8b416f871fb"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="item_id" isBlankWhenNull="true">
+					<reportElement x="384" y="0" width="143" height="28" uuid="f0d3c54c-b63c-48e0-8e9e-88537a3b77aa"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{total_price_2}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="382" y="-1" width="1" height="28" uuid="af9a98b8-c289-4a21-b8be-dfc6586bdb0e"/>
+				</line>
+				<line>
+					<reportElement x="0" y="27" width="537" height="1" uuid="2d812eb3-eaa9-4205-b6fd-65f704b089f5"/>
+				</line>
+				<line>
+					<reportElement x="537" y="0" width="1" height="28" uuid="d6aa71de-a3d1-4801-bd08-fe59528cfca6"/>
+				</line>
+				<line>
+					<reportElement x="0" y="0" width="1" height="28" uuid="ced7817a-e9df-446e-a72b-21af7f4756e0"/>
+				</line>
+				<line>
+					<reportElement x="237" y="0" width="1" height="28" uuid="7c05109f-abbe-4781-abe3-2e9197e04ebd"/>
+				</line>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="item_id" isBlankWhenNull="true">
+					<reportElement x="238" y="0" width="134" height="27" uuid="95a6c092-6992-426c-94ef-496a4d3583f8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{order_quantity_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="537" height="28" backcolor="#CCCCFF" uuid="df78c037-b701-4b50-87e5-c1c9f86739f7"/>
+			</rectangle>
+			<line>
+				<reportElement x="382" y="0" width="1" height="28" uuid="1f9356f5-debc-4262-8385-85343500ca5c"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="235" height="24" uuid="f43c348a-66bd-42cb-9676-e9efd1bcf325"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="2" width="151" height="26" uuid="490ba273-5252-48f0-8fcb-47b82e461ffc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="237" y="0" width="1" height="28" uuid="bb2e1906-b0d8-4abb-b3cb-af45244fcb22"/>
+			</line>
+			<staticText>
+				<reportElement x="238" y="2" width="144" height="26" uuid="30a8ed17-be54-4b71-bf35-dcd302d4197c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
